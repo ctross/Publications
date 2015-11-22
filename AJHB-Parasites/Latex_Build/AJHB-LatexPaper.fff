@@ -1,0 +1,107 @@
+\begin{figure}
+    \centering
+    \caption {Network diagrams contrasting the TFE hypothesis about parasites and our alternative proposal linking structural racism and proximate intermediate nodes to parasite prevalence and other outcome variables. Solid line indicate increases, dashed lines indicate decreases, and the dotted line indicates a variable relationship, in this case depending on whether health care is associated with missionary work.}  \label{netw}
+    \subfigure[The causal direction of linkages between parasite prevalence and downstream cultural characteristics proposed by TFE. In some of their work, TFE include intermediate nodes (often as psychological modules) as well. For example, parasites are thought to affect democratization through a psychological mechanism related to xenophobia, but the proposed causal direction is as depicted here. ]
+    {
+        \includegraphics[width=6in]{Figures/NetworkTFE}
+        \label{netw:first_sub}
+    }
+
+        \subfigure[An alternative model, linking structural racism to the outcome variables through various intermediate nodes concerning political economy. This model would also predict correlations between parasite prevalence and many cultural outcomes, but there is no proposed causal role of parasite prevalence on these outcomes.]
+    {
+        \includegraphics[width=6in]{Figures/NetworkRW}
+        \label{netw:second_sub}
+    }
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resDem}  Posterior distributions of the probability of selecting categorical responses as a function of parasite prevalence.  We see that: 1) preference for authoritarianism decline as a function of increasing parasite prevalence [in units of frequency $\in (0,1)$ ]; 2) preference for democracy increase as a function of increasing parasite prevalence; and, 3) indifference/apathy toward the political system grow relative to preference for authoritarianism as parasite prevalence in a district increases.  }
+\includegraphics[width=5in]{Figures/DemocracyModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resCol}  Posterior distributions of the cumulative probability of an individual responding below a given ordered categorical threshold on the 1 to 10 scale measuring preference for state or free market solutions, respectively.  As red shifts to blue, preferences shift from the market fixing/controlling economic problems (individualism) to the state fixing/controlling of economic problems (collectivism). Each group of lines corresponds to one of the ordered categorical responses available to respondents, plotted as a function of parasite prevalence.  We find that: 1) the majority of the population, regardless of parasite prevalence, favors state control of economic issues, as the majority of the cumulative probability density is accounted for by the responses corresponding to increased state control; 2) the response profiles vary only slightly as a function of parasite prevalence; and, 3) to the minor extent that increased parasite prevalence varies with social preferences on the individualism/collectivism spectrum, it varies positively with preferences for market individualism, as can be seen by the slightly downward sloping lines (from left to right), which indicate that more cumulative probability is accounted for by higher item rankings (free market preferences) when parasite prevalence is high. }
+\includegraphics[width=5in]{Figures/CollectivismModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resGen}  Posterior distributions of the cumulative probability of an individual responding below a given ordered categorical threshold. As red shifts to blue, individuals report an increasing equality of men and women, from ``Not at All,'' to ``Fully.'' We find that: 1) across districts about 18\% of respondents think that equality of men and women is never ensured (``Not at all''), and 20\% of respondents think it is always ensured (``Fully''), with the majority of the population falling somewhere in between; 2) there is almost no variation in gender equality as a function of parasite prevalence across districts; and, 3) to the extent that any difference in gender equality exists as a function of parasite prevalence, there is a slight but non-reliable trend towards increased gender equality in districts where parasite prevalence is high. }
+\includegraphics[width=5in]{Figures/GenderEqualityModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resEdu}  Posterior distributions of the cumulative probability of an individual achieving below a given ordered categorical threshold of education. As red shifts to blue, individuals report an increasing level of achieved education. Each group of lines corresponds to one of the ordered categorical responses available to respondents (0 years through 12 years of primary/secondary education, plus 3 ordered classes of post-secondary education), plotted as a function of parasite prevalence.  We can see that: 1) across districts, approximately equal levels of primary education are achieved, regardless of parasite prevalence (this is shown by the cluster of categorical thresholds for which Cumulative Probability $<0.2$); 2) there is evidence of slightly lower educational achievement as a function of increasing parasite prevalence for secondary school levels of education (this is shown by the cluster of categorical thresholds for which Cumulative Probability $>0.3$ and $<0.7$); and, 3) there are only slight differences in higher educational achievement as a function of parasite prevalence (this is shown by the cluster of categorical thresholds for which Cumulative Probability $>0.8$).}
+\includegraphics[width=5in]{Figures/EducationModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resViolence}  Posterior distribution of the regression of a respondent (or an immediate family member of the respondent) being the victim of an assault, attack, or crime, on parasite prevalence. The Y axis is probability of experiencing an assault, attack, or crime.  The data show no relationship between the prevalence of parasites and violent crime.}
+\includegraphics[width=5in]{Figures/ViolenceModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resRel}  Posterior distributions of the cumulative probability of an individual responding below a given ordered categorical threshold. As blue shifts to red, individuals report an increasing level of religiosity. The bottom-most group of blue lines is the posterior distribution of the cut-point between those with ``No Religion,'' and those with religions (but with varying levels of religiosity). Every other group of lines corresponds to the posterior distribution of one of the other ordered categorical responses available to respondents describing their level of religiosity, plotted as a function of parasite prevalence. We find that:  1) across districts there is almost no variation in the proportion of the population with ``No Religion,'' as a function of parasite prevalence; 2) there is almost no variation in the proportion of the population that self identifies as ``Very Devout,'' as a function of parasite prevalence across districts; and, 3) to the extent that any differences in religiosity exist as a function of parasite prevalence, there is a slight trend for individuals in high parasite regions to mark ``Devout'' as opposed to ``Not very devout,'' when describing their religiosity (the absolute value of this effect as one moves from parasite-free regions to high parasite regions is about $2.5\%$). }
+\includegraphics[width=5in]{Figures/ReligiosityModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resStructRacism}  Posterior distributions of the fraction of the population by ethnicity as a function of parasite prevalence. We find that: 1) the majority of the population across districts identify as either white or mestizo, with individuals identifying as black, indigenous, or mulato comprising only a small fraction of the population; 2) individuals identifying as white compose the majority of the population in parasite-sparse or parasite-free districts and compose a small fraction of the population in high-parasite districts; 3) individuals identifying in one of the non-white categories compose a small fraction of the population in parasite-sparse districts, but an increasing fraction of the population as parasite prevalence at the district level increases.}
+\includegraphics[width=5in]{Figures/StructuralRacismModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resSewer} Posterior distributions of the regression line linking parasite prevalence and the presence sewage and sanitation systems. From this plot, we can see that: 1) as parasite prevalence increases in a district, we observe a co-occurring decrease in access to sanitation systems.}
+\includegraphics[width=5in]{Figures/SewerModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resSewerEth} Posterior distributions of the fraction of the population by ethnicity as a function of the fraction the population with sewage and sanitation services. We can see that: 1) areas with near universal sewage and sanitation services are composed almost entirely of whites; 2) areas with intermediate levels of sewage and sanitation service are primarily composed of mestizo and whites (with the white portion of the district presumably having greater access to such services); and, 3) areas with diminished access to sewage and sanitation services are primarily composed of indigenous populations.}
+\includegraphics[width=5in]{Figures/SewageAndEthnicityModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{\label{resWhiteEdu} Posterior distributions of the cumulative probability of an individual achieving below a given ordered categorical threshold of education.  As red shifts to blue, individuals report an increasing level of achieved education. Each group of lines corresponds to one of the ordered categorical responses available to respondents, plotted as a function of the district level proportion of whites. We find that: 1) there is a strong effect of the proportion of population that is white on increasing achieved education, an effect stronger than the effect of parasite prevalence on education (as seen in Figure \ref{resEdu}).}
+\includegraphics[width=5in]{Figures/WhiteEducationModel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+    \centering
+    \caption {Posterior distributions of the cumulative probability of an individual achieving below a given ordered categorical threshold of education. Frame (a) plots the posterior distribution of achieved eduction as a function of parasite prevalence, when a district is composed of all non-whites; Frame (b) plots the posterior distribution of achieved education as a function of parasite prevalence, when a district is composed of all whites. Each group of lines corresponds to one of the ordered categorical responses available to respondents (years of education), plotted as a function of district-level parasite prevalence. As red shifts to blue, individuals report an increasing level of achieved education. We find that: 1) there is a strong effect of the proportion of population that is white on increasing achieved education (about a 20\% increase in achieving a secondary school education); and, 2) controlling for the proportion of a district that is white, there is no effect of parasite prevalence on education.}  \label{ALubWhiteEdu}
+    \subfigure[Frame (a) plots the model posterior when a district has a population with no whites.]
+    {
+        \includegraphics[width=3in]{Figures/WhiteEducationModel(WhiteEquals0)}
+        \label{ALubWhiteEdu:first_sub}
+    }     \subfigure[Frame (b) plots the model posterior when a district has a population that is all white. ]
+    {
+        \includegraphics[width=3in]{Figures/WhiteEducationModel(WhiteEquals1)}
+        \label{ALubWhiteEdu:second_sub}
+    }
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+    \centering
+    \caption {Figure \ref{ALubWhitenessAndReligModel} plots the posterior distributions of the cumulative probability of an individual responding below a given ordered categorical threshold. As blue shifts to red, individuals report an increasing level of religiosity. Frame (a) plots the model posterior when a district has a population with no whites; Frame (b) plots the model posterior when a district has a population that is all white. The bottom-most group of blue lines is the posterior distribution of the cut-point between those with ``No Religion,'' and those with religions (but with varying levels of religiosity). Every other group of lines corresponds to the posterior distribution of one of the other ordered categorical responses available to respondents describing their level of religiosity, plotted as a function of parasite prevalence.  The main results of the multiple regression model is that: 1) there are strong baseline differences in religosity as a function of the proportion whites in a district (a proxy measure for decreased access to essential services like water, sewage and sanitation services, and medical care); and, 2) there is essentially no variation in religiosity as a function parasite prevalence, controlling for the proportion of whites in a district. }  \label{ALubWhitenessAndReligModel}
+    \subfigure[Frame (a) plots the model posterior when a district has a population with no whites.]
+    {
+        \includegraphics[width=3in]{Figures/WhiteReligiosityModel(WhitenessEquals0)}
+        \label{ALubWhitenessAndReligModel:first_sub}
+    }     \subfigure[Frame (b) plots the model posterior when a district has a population that is all white. ]
+    {
+        \includegraphics[width=3in]{Figures/WhiteReligiosityModel(WhitenessEquals1)}
+        \label{ALubWhitenessAndReligModel:second_sub}
+    }
+\end{figure}
+\efloatseparator
+ 

@@ -1,0 +1,11 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: AJHB-LatexPaper.aux
+The style file: spbasic.bst
+Database file #1: AJHB-LatexPaper.bib
+`journal' is a missing field, not a string, for entry jacob2005avian
+while executing---line 1650 of file spbasic.bst
+Warning--empty journal in jacob2005avian
+`journal' is a missing field, not a string, for entry molineaux1980garki
+while executing---line 1650 of file spbasic.bst
+Warning--empty journal in molineaux1980garki
+Warning--empty booktitle in pittphilsci9767
+(There were 2 error messages)
