@@ -1,4 +1,4 @@
-# PLOS Racial Bias in Police Shootings
+# PLOS - Racial Bias in Police Shootings
 
 ```
 @article{ross2015multi,
@@ -13,4 +13,4 @@
 }
 ```
 
-I am maintaining and updating the data set and analysis on this page. I have thus far received suggestion for additional robustness checks, and correction of some minor erratum (7 cases of police shootings were included in duplicate, because my coding variations led my filter to miss these cases).
+I am maintaining and updating the data set and analysis on this page. I have thus far received suggestion for additional robustness checks, and correction of some minor erratum (7 cases of police shootings were included in duplicate, because coding variations on name led my filter to miss these cases).
