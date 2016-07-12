@@ -13,4 +13,4 @@
 }
 ```
 
-I am maintaining and updating this data set and analysis on this page. I have thus far received suggestion for additional robustness checks, and correction of some minor erratum (7 cases of police shootings were included in duplicate, because coders used different name vairation and different counties, so my filter missed these cases).
+I am maintaining and updating the data set and analysis on this page. I have thus far received suggestion for additional robustness checks, and correction of some minor erratum (7 cases of police shootings were included in duplicate, because my coding variations led my filter to miss these cases).
