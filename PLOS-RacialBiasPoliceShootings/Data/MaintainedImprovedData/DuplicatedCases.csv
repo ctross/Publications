@@ -1,0 +1,15 @@
+DUPLICATE,ID,Timestamp,Date Searched,State,County,City,Agency Name,Victim Name
+1,CALosAngeles,9/1/2014 8:02,9/30/2011,CA - California,LosAngeles,Glendale,Glendale Police Department,Antonio Tafolla
+1,CALosAngeles,10/5/2014 0:38,10/4/2011,CA - California,LosAngeles,Glendale,Glendale police,Antonio Tafolla-Diaz
+1,CARiverside,9/24/2014 16:43,2/25/2013,CA - California,Riverside,Riverside,Riverside PD,Lorenzo Ciaramella
+1,CARiverside,8/26/2014 19:51,2/19/2013,CA - California,Riverside,Riverside,Riverside Police Department,Lorenzo Joseph Ciaramella
+1,FLMiamiDade,8/21/2014 22:17,2/11/2011,FL - Florida,MiamiDade,Miami,Miami Police Department,Travis McNeal
+1,FLMiamiDade,8/21/2014 15:57,2/11/2011,FL - Florida,MiamiDade,Miami,Miami PD,Travis McNeil
+1,NCMecklenburg,8/20/2014 22:18,9/1/2013,NC - North Carolina,Mecklenburg,Charlotte-Mecklenburg,Charlotte-Mecklenburg Police Department,Jonathan A. Ferrell
+1,NCMecklenburg,8/20/2014 16:37,9/24/2013,NC - North Carolina,Mecklenburg,Charlotte,Charlotte-Mecklenburg Police Department,Jonathan Ferrell
+1,NYOntario,8/26/2014 16:30,5/20/2011,NY - New York,Ontario,Geneva,Geneva PD,"William ""Corey"" Jackson"
+1,NYOntario,8/27/2014 16:33,5/23/2011,NY - New York,Ontario,Geneva,Geneva Police Department,William Corey Jackson
+1,TNHamilton,8/23/2014 15:01,4/3/2014,TN - Tennessee,Hamilton,Chattanooga,Chattanooga Police Department,Jesse Mathews
+1,TNHamilton,8/23/2014 1:12,4/2/2011,TN - Tennessee,Hamilton,Chatanooga,Hamilton County Police,Jesse Matthews
+1,VAFairfax,8/20/2014 16:58,8/29/2013,VA - Virginia,Fairfax,Springfield,Fairfax County Police Department,John B. Geer
+1,VAFairfax,8/20/2014 13:14,8/29/2013,VA - Virginia,Fairfax,Springfield,Fairfax County Police,John Geer
