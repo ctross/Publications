@@ -382,7 +382,7 @@ pc95h.RR_Black_Unarmed_Versus_White_Unarmed      ,
 pc95h.RR_Hispanic_Unarmed_Versus_White_Unarmed   ,
 
 pc95h.RR_Black_Unarmed_Versus_White_Armed        ,
-pc95h.RR_Hispanic_Unarmed_Versus_White_Armed   
+pc95h.RR_Hispanic_Unarmed_Versus_White_Armed     ,
 
 m.log.RR_Black_Unarmed_Versus_White_Unarmed      ,
 m.log.RR_Hispanic_Unarmed_Versus_White_Unarmed	 ,
