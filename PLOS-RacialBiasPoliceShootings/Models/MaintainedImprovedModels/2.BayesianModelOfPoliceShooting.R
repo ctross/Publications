@@ -301,15 +301,15 @@ m.RR_Hispanic_Unarmed_Versus_White_Unarmed[i]<-median(RR_Hispanic_Unarmed_Versus
 m.RR_Black_Unarmed_Versus_White_Armed[i]<-median(RR_Black_Unarmed_Versus_White_Armed[,i])
 m.RR_Hispanic_Unarmed_Versus_White_Armed[i]<-median(RR_Hispanic_Unarmed_Versus_White_Armed[,i])
 
-m.log.RR_Black_Unarmed_Versus_White_Unarmed  <- mean(log(RR_Black_Unarmed_Versus_White_Unarmed[,i]))
-m.log.RR_Hispanic_Unarmed_Versus_White_Unarmed <-mean(log(RR_Hispanic_Unarmed_Versus_White_Unarmed[,i]))
-m.log.RR_Black_Unarmed_Versus_White_Armed     <- mean(log(RR_Black_Unarmed_Versus_White_Armed[,i]))
-m.log.RR_Hispanic_Unarmed_Versus_White_Armed   <- mean(log(RR_Hispanic_Unarmed_Versus_White_Armed[,i]))
+m.log.RR_Black_Unarmed_Versus_White_Unarmed[i]  <- mean(log(RR_Black_Unarmed_Versus_White_Unarmed[,i]))
+m.log.RR_Hispanic_Unarmed_Versus_White_Unarmed[i] <-mean(log(RR_Hispanic_Unarmed_Versus_White_Unarmed[,i]))
+m.log.RR_Black_Unarmed_Versus_White_Armed[i]     <- mean(log(RR_Black_Unarmed_Versus_White_Armed[,i]))
+m.log.RR_Hispanic_Unarmed_Versus_White_Armed[i]   <- mean(log(RR_Hispanic_Unarmed_Versus_White_Armed[,i]))
 
-sd.log.RR_Black_Unarmed_Versus_White_Unarmed   <- sd(log(RR_Black_Unarmed_Versus_White_Unarmed[,i]))
-sd.log.RR_Hispanic_Unarmed_Versus_White_Unarmed <-sd(log(RR_Hispanic_Unarmed_Versus_White_Unarmed[,i]))
-sd.log.RR_Black_Unarmed_Versus_White_Armed     <- sd(log(RR_Black_Unarmed_Versus_White_Armed[,i]))
-sd.log.RR_Hispanic_Unarmed_Versus_White_Armed  <- sd(log(RR_Hispanic_Unarmed_Versus_White_Armed[,i]))
+sd.log.RR_Black_Unarmed_Versus_White_Unarmed[i]   <- sd(log(RR_Black_Unarmed_Versus_White_Unarmed[,i]))
+sd.log.RR_Hispanic_Unarmed_Versus_White_Unarmed[i] <-sd(log(RR_Hispanic_Unarmed_Versus_White_Unarmed[,i]))
+sd.log.RR_Black_Unarmed_Versus_White_Armed[i]     <- sd(log(RR_Black_Unarmed_Versus_White_Armed[,i]))
+sd.log.RR_Hispanic_Unarmed_Versus_White_Armed[i]  <- sd(log(RR_Hispanic_Unarmed_Versus_White_Armed[,i]))
 
 pc95h.RR_Black_Armed_Versus_Unarmed[i]<-PCI(RR_Black_Armed_Versus_Unarmed[,i])[2]
 pc95h.RR_White_Armed_Versus_Unarmed[i]<-PCI(RR_White_Armed_Versus_Unarmed[,i])[2]
