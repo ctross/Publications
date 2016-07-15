@@ -285,17 +285,15 @@ pc95h.RR_Hispanic_Unarmed_Versus_White_Unarmed   <-c()
 pc95h.RR_Black_Unarmed_Versus_White_Armed        <-c()
 pc95h.RR_Hispanic_Unarmed_Versus_White_Armed     <-c()
 
-m.log.RR_Black_Unarmed_Versus_White_Unarmed[i]  <-c()
-m.log.RR_Hispanic_Unarmed_Versus_White_Unarmed[i] <-c()
-m.log.RR_Black_Unarmed_Versus_White_Armed[i]    <-c()
-m.log.RR_Hispanic_Unarmed_Versus_White_Armed[i]  <-c()
-m.log.RR_Black_Armed_Versus_White_Armed[i]    <-c()
+m.log.RR_Black_Unarmed_Versus_White_Unarmed  <-c()
+m.log.RR_Hispanic_Unarmed_Versus_White_Unarmed <-c()
+m.log.RR_Black_Unarmed_Versus_White_Armed    <-c()
+m.log.RR_Hispanic_Unarmed_Versus_White_Armed  <-c()
 
-sd.log.RR_Black_Unarmed_Versus_White_Unarmed[i]  <-c()
-sd.log.RR_Hispanic_Unarmed_Versus_White_Unarmed[i]<-c()
-sd.log.RR_Black_Unarmed_Versus_White_Armed[i]    <-c()
-sd.log.RR_Hispanic_Unarmed_Versus_White_Armed[i] <-c()
-sd.log.RR_Black_Armed_Versus_White_Armed[i]   <-c()
+sd.log.RR_Black_Unarmed_Versus_White_Unarmed  <-c()
+sd.log.RR_Hispanic_Unarmed_Versus_White_Unarmed<-c()
+sd.log.RR_Black_Unarmed_Versus_White_Armed    <-c()
+sd.log.RR_Hispanic_Unarmed_Versus_White_Armed <-c()
  
  
  
