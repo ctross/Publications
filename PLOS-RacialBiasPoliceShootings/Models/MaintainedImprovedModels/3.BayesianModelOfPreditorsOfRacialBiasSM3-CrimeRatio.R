@@ -1,5 +1,5 @@
 
-################################################################ Extract Data
+############################################################### Extract Data
      Ym<- g$m.log.RR_Black_Unarmed_Versus_White_Unarmed     # First Outcome
      Ysd<- g$sd.log.RR_Black_Unarmed_Versus_White_Unarmed   #
 
