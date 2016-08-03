@@ -1,8 +1,8 @@
 
 ################################## Load Data ###################################
  d<-read.csv("MapFileData-WithCountyResultsAndCovariates.csv") # 
- library(rstan)
- library(rethinking)
+
+ library(rstanmulticore)
 
 ##############################################################################
 # This code is used to model the relative risk across race-ethnicity
@@ -212,4 +212,4 @@ vector[N]  RR_Hispanic_Unarmed_Versus_White_Armed;
 
 ################################################################################ Fit the Model IN STAN!
 
-fitKilling <- stan(model_code=model_code, data = model_dat,init=0, thin=1, iter = 2000, warmup=1000,chains = 4,refresh=1)
+fitKilling <- pstan(model_code=model_code, data = model_dat,init=0, thin=1, iter = 2000, warmup=1000,chains = 4,refresh=1)
