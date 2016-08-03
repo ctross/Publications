@@ -42,7 +42,7 @@ ArmedWhite<-G$ArmedWhite
 
 Nblack<-G$Nblack
 Nwhite<-G$Nwhite
-Nhispanic<-G$hispanic
+Nhispanic<-G$Nhispanic
 
 N<-length(Nblack)
 
