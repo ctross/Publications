@@ -40,9 +40,9 @@ ArmedHispanic<-G$HispanicArmed
 UnarmedWhite<-G$WhiteUnarmed		
 ArmedWhite<-G$WhiteArmed
 
-Nblack<-G$BAC_TOT
-Nwhite<-G$WA_TOT
-Nhispanic<-G$H_TOT
+Nblack<-G$Nblack
+Nwhite<-G$Nwhite
+Nhispanic<-G$hispanic
 
 N<-length(Nblack)
 
