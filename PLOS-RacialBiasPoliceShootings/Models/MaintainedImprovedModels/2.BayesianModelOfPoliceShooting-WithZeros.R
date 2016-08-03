@@ -33,12 +33,12 @@ Nhispanic[which(is.na(Nhispanic))]<-0
 G<-data.frame(UnarmedBlack, ArmedBlack, UnarmedHispanic, ArmedHispanic, UnarmedWhite, ArmedWhite, Nblack, Nwhite, Nhispanic)
 G<-G[which(Nblack*Nwhite*Nhispanic>0),]
 
-UnarmedBlack<-G$BlackUnarmed	
-ArmedBlack<-G$BlackArmed
-UnarmedHispanic<-G$HispanicUnarmed	
-ArmedHispanic<-G$HispanicArmed		
-UnarmedWhite<-G$WhiteUnarmed		
-ArmedWhite<-G$WhiteArmed
+UnarmedBlack<-G$UnarmedBlack
+ArmedBlack<-G$ArmedBlack
+UnarmedHispanic<-G$UnarmedHispanic
+ArmedHispanic<-G$ArmedHispanic	
+UnarmedWhite<-G$UnarmedWhite	
+ArmedWhite<-G$ArmedWhite
 
 Nblack<-G$Nblack
 Nwhite<-G$Nwhite
