@@ -212,4 +212,4 @@ vector[N]  RR_Hispanic_Unarmed_Versus_White_Armed;
 
 ################################################################################ Fit the Model IN STAN!
 
-fitKilling <- pstan(model_code=model_code, data = model_dat, thin=1, iter = 4000, warmup=2000,chains = 6,refresh=1, control=list(metric="dense_e", max_treedepth=16))
+fitKilling <- pstan(model_code=model_code, data = model_dat, thin=1, iter = 4100, warmup=2000,chains = 6,refresh=1, control=list(metric="dense_e", max_treedepth=16))
