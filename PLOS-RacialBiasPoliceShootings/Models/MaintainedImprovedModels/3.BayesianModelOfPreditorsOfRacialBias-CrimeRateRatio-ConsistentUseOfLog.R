@@ -2,147 +2,150 @@
 library(rstan)
 library(rethinking)
 
- g<-read.csv(file.choose())    # MapFileData-WithCountyResultsAndCovariates.csv
- goog<-read.csv(file.choose()) # RacismData_Google-Stephens-Davidowitz.csv
+g<-read.csv(file.choose())    # MapFileData-WithCountyResultsAndCovariates.csv
+goog<-read.csv(file.choose()) # RacismData_Google-Stephens-Davidowitz.csv
  
 ############################################################### Extract Data
-     Ym<- g$m.log.RR_Black_Unarmed_Versus_White_Unarmed     # First Outcome
-     Ysd<- g$sd.log.RR_Black_Unarmed_Versus_White_Unarmed   #
+Ym<- g$m.log.RR_Black_Unarmed_Versus_White_Unarmed     # First Outcome
+Ysd<- g$sd.log.RR_Black_Unarmed_Versus_White_Unarmed   #
 
 ############################################################### Define race-specific crime rates
-     WhiteAssault <- (g$AssaultsWhite.sum/g$WA_TOT)
-     BlackAssault <- (g$AssaultsBlack.sum/g$BAC_TOT)
+WhiteAssault <- (g$AssaultsWhite.sum/g$WA_TOT)
+BlackAssault <- (g$AssaultsBlack.sum/g$BAC_TOT)
 
-     WhiteWeapons <- (g$WeaponsWhite.sum/g$WA_TOT)
-     BlackWeapons <- (g$WeaponsBlack.sum/g$BAC_TOT)
+WhiteWeapons <- (g$WeaponsWhite.sum/g$WA_TOT)
+BlackWeapons <- (g$WeaponsBlack.sum/g$BAC_TOT)
 
 ############################################################## Extract other data
-     Wealth <- (g$Median.Income)
+Wealth <- (g$Median.Income)
 
-     Pop<-g$TOT_POP
+Pop<-g$TOT_POP
 
-     BlackRatio<-(g$BAC_TOT+1)/Pop
+BlackRatio<-(g$BAC_TOT+1)/Pop
 
-     Gini<-g$Gini
+Gini<-g$Gini
 
-     State<-g$State
+State<-g$State
 
-     DMA<-g$DMA
+DMA<-g$DMA
 
 ################################################################### Compile Data
 #### then reduce to only data with estimates of racial bias in police shooting
-     g2<- data.frame(g$County.FIPS.Code,Ym,Ysd, Gini, Wealth,Pop,State,BlackRatio,Gini,DMA,WhiteAssault,BlackAssault,WhiteWeapons,BlackWeapons)
-     g3 <- g2[complete.cases(g2$Ym),]
+g2<- data.frame(g$County.FIPS.Code,Ym,Ysd, Gini, Wealth,Pop,State,BlackRatio,Gini,DMA,WhiteAssault,BlackAssault,WhiteWeapons,BlackWeapons)
+g3 <- g2[complete.cases(g2$Ym),]
 
-     Ym  <- g3$Ym
-     Ysd <- g3$Ysd
+Ym  <- g3$Ym
+Ysd <- g3$Ysd
 
-     N<-length(Ym)
+N<-length(Ym)
 
-     DMA <- g3$DMA
+DMA <- g3$DMA
 
-     Pop <-g3$Pop/sd(g3$Pop,na.rm=T)
-     BlackRatio<-g3$BlackRatio
+Pop <-g3$Pop/sd(g3$Pop,na.rm=T)
+BlackRatio<-g3$BlackRatio
 
-     Wealth <-g3$Wealth/sd(g3$Wealth,na.rm=T)
-     Gini<-g3$Gini
+Wealth <-g3$Wealth/sd(g3$Wealth,na.rm=T)
+Gini<-g3$Gini
 
-     Ones<-rep(1,N)
+Ones<-rep(1,N)
 
-     DMAIndex<-goog$dmaindex
-     GoogleRacism<-goog$raciallychargedsearch
+DMAIndex<-goog$dmaindex
+GoogleRacism<-goog$raciallychargedsearch
 
-########### For Supplemental Analysis
-     WhiteAssault <-g3$WhiteAssault
-     MaxWhiteAssault<-max(WhiteAssault,na.rm=T)
-     MinWhiteAssault<-min(WhiteAssault,na.rm=T)
+########### There is missing data here, so we need to find the max and min of emprical data
+WhiteAssault <-g3$WhiteAssault
+MaxWhiteAssault<-max(WhiteAssault,na.rm=T)
+MinWhiteAssault<-min(WhiteAssault,na.rm=T)
 
-     BlackAssault <-g3$BlackAssault
-     MaxBlackAssault<-max(BlackAssault,na.rm=T)
-     MinBlackAssault<-min(BlackAssault,na.rm=T)
+BlackAssault <-g3$BlackAssault
+MaxBlackAssault<-max(BlackAssault,na.rm=T)
+MinBlackAssault<-min(BlackAssault,na.rm=T)
 
-     WhiteWeapons <-g3$WhiteWeapons
-     MaxWhiteWeapons<-max(WhiteWeapons,na.rm=T)
-     MinWhiteWeapons<-min(WhiteWeapons,na.rm=T)
+WhiteWeapons <-g3$WhiteWeapons
+MaxWhiteWeapons<-max(WhiteWeapons,na.rm=T)
+MinWhiteWeapons<-min(WhiteWeapons,na.rm=T)
 
-     BlackWeapons <-g3$BlackWeapons
-     MaxBlackWeapons<-max(BlackWeapons,na.rm=T)
-     MinBlackWeapons<-min(BlackWeapons,na.rm=T)
+BlackWeapons <-g3$BlackWeapons
+MaxBlackWeapons<-max(BlackWeapons,na.rm=T)
+MinBlackWeapons<-min(BlackWeapons,na.rm=T)
 
+##################### Now we code where the missing data occur
+# There are two ways to account for zeros, either add a small constant later, or treat zeros as missing data.
+# Here we code the small number of zeros as missing data parameters. It is as if the rates are zero due lack of 
+# reporting, not becuase of complete absence of crime. 
 
-   WhiteAssault <- ifelse(WhiteAssault==0,NA,WhiteAssault)
-     MissCumSumWhiteAssault <-cumsum(is.na(WhiteAssault))
-     MissCumSumWhiteAssault <-ifelse(MissCumSumWhiteAssault ==0,1,MissCumSumWhiteAssault )
-     NonMissWhiteAssault  <-ifelse(is.na(WhiteAssault ),0,1)
-     NmissWhiteAssault <-sum(is.na(WhiteAssault ))
-     WhiteAssault [is.na(WhiteAssault )]<-9999999
+WhiteAssault <- ifelse(WhiteAssault==0,NA,WhiteAssault)
+MissCumSumWhiteAssault <-cumsum(is.na(WhiteAssault))
+MissCumSumWhiteAssault <-ifelse(MissCumSumWhiteAssault ==0,1,MissCumSumWhiteAssault )
+NonMissWhiteAssault  <-ifelse(is.na(WhiteAssault ),0,1)
+NmissWhiteAssault <-sum(is.na(WhiteAssault ))
+WhiteAssault [is.na(WhiteAssault )]<-9999999
 
-        BlackAssault <- ifelse(BlackAssault==0,NA,BlackAssault)
-     MissCumSumBlackAssault <-cumsum(is.na(BlackAssault))
-     MissCumSumBlackAssault <-ifelse(MissCumSumBlackAssault ==0,1,MissCumSumBlackAssault )
-     NonMissBlackAssault  <-ifelse(is.na(BlackAssault ),0,1)
-     NmissBlackAssault <-sum(is.na(BlackAssault ))
-     BlackAssault [is.na(BlackAssault )]<-9999999
+BlackAssault <- ifelse(BlackAssault==0,NA,BlackAssault)
+MissCumSumBlackAssault <-cumsum(is.na(BlackAssault))
+MissCumSumBlackAssault <-ifelse(MissCumSumBlackAssault ==0,1,MissCumSumBlackAssault )
+NonMissBlackAssault  <-ifelse(is.na(BlackAssault ),0,1)
+NmissBlackAssault <-sum(is.na(BlackAssault ))
+BlackAssault [is.na(BlackAssault )]<-9999999
 
-         WhiteWeapons <- ifelse(WhiteWeapons==0,NA,WhiteWeapons)
-     MissCumSumWhiteWeapons <-cumsum(is.na(WhiteWeapons))
-     MissCumSumWhiteWeapons <-ifelse(MissCumSumWhiteWeapons ==0,1,MissCumSumWhiteWeapons )
-     NonMissWhiteWeapons  <-ifelse(is.na(WhiteWeapons ),0,1)
-     NmissWhiteWeapons <-sum(is.na(WhiteWeapons ))
-     WhiteWeapons [is.na(WhiteWeapons )]<-9999999
+WhiteWeapons <- ifelse(WhiteWeapons==0,NA,WhiteWeapons)
+MissCumSumWhiteWeapons <-cumsum(is.na(WhiteWeapons))
+MissCumSumWhiteWeapons <-ifelse(MissCumSumWhiteWeapons ==0,1,MissCumSumWhiteWeapons )
+NonMissWhiteWeapons  <-ifelse(is.na(WhiteWeapons ),0,1)
+NmissWhiteWeapons <-sum(is.na(WhiteWeapons ))
+WhiteWeapons [is.na(WhiteWeapons )]<-9999999
 
-        BlackWeapons <- ifelse(BlackWeapons==0,NA,BlackWeapons)
-     MissCumSumBlackWeapons <-cumsum(is.na(BlackWeapons))
-     MissCumSumBlackWeapons <-ifelse(MissCumSumBlackWeapons ==0,1,MissCumSumBlackWeapons )
-     NonMissBlackWeapons  <-ifelse(is.na(BlackWeapons ),0,1)
-     NmissBlackWeapons <-sum(is.na(BlackWeapons ))
-     BlackWeapons [is.na(BlackWeapons )]<-9999999
-
+BlackWeapons <- ifelse(BlackWeapons==0,NA,BlackWeapons)
+MissCumSumBlackWeapons <-cumsum(is.na(BlackWeapons))
+MissCumSumBlackWeapons <-ifelse(MissCumSumBlackWeapons ==0,1,MissCumSumBlackWeapons )
+NonMissBlackWeapons  <-ifelse(is.na(BlackWeapons ),0,1)
+NmissBlackWeapons <-sum(is.na(BlackWeapons ))
+BlackWeapons [is.na(BlackWeapons )]<-9999999
 
 model_dat  <-list(N=N,
-   Ym=Ym,
-   Ysd=Ysd,
+Ym=Ym,
+Ysd=Ysd,
 
-   MissCumSumWhiteAssault=MissCumSumWhiteAssault,
-   NonMissWhiteAssault=NonMissWhiteAssault,
-   NmissWhiteAssault=NmissWhiteAssault,
-   WhiteAssault=WhiteAssault,
-   MaxWhiteAssault=MaxWhiteAssault,
-   MinWhiteAssault=MinWhiteAssault,
+MissCumSumWhiteAssault=MissCumSumWhiteAssault,
+NonMissWhiteAssault=NonMissWhiteAssault,
+NmissWhiteAssault=NmissWhiteAssault,
+WhiteAssault=WhiteAssault,
+MaxWhiteAssault=MaxWhiteAssault,
+MinWhiteAssault=MinWhiteAssault,
 
-   MissCumSumBlackAssault=MissCumSumBlackAssault,
-   NonMissBlackAssault=NonMissBlackAssault,
-   NmissBlackAssault=NmissBlackAssault,
-   BlackAssault=BlackAssault,
-   MaxBlackAssault=MaxBlackAssault,
-   MinBlackAssault=MinBlackAssault,
+MissCumSumBlackAssault=MissCumSumBlackAssault,
+NonMissBlackAssault=NonMissBlackAssault,
+NmissBlackAssault=NmissBlackAssault,
+BlackAssault=BlackAssault,
+MaxBlackAssault=MaxBlackAssault,
+MinBlackAssault=MinBlackAssault,
 
-   MissCumSumWhiteWeapons=MissCumSumWhiteWeapons,
-   NonMissWhiteWeapons=NonMissWhiteWeapons,
-   NmissWhiteWeapons=NmissWhiteWeapons,
-   WhiteWeapons=WhiteWeapons,
-   MaxWhiteWeapons=MaxWhiteWeapons,
-   MinWhiteWeapons=MinWhiteWeapons,
+MissCumSumWhiteWeapons=MissCumSumWhiteWeapons,
+NonMissWhiteWeapons=NonMissWhiteWeapons,
+NmissWhiteWeapons=NmissWhiteWeapons,
+WhiteWeapons=WhiteWeapons,
+MaxWhiteWeapons=MaxWhiteWeapons,
+MinWhiteWeapons=MinWhiteWeapons,
 
-   MissCumSumBlackWeapons=MissCumSumBlackWeapons,
-   NonMissBlackWeapons=NonMissBlackWeapons,
-   NmissBlackWeapons=NmissBlackWeapons,
-   BlackWeapons=BlackWeapons,
-   MaxBlackWeapons=MaxBlackWeapons,
-   MinBlackWeapons=MinBlackWeapons,
+MissCumSumBlackWeapons=MissCumSumBlackWeapons,
+NonMissBlackWeapons=NonMissBlackWeapons,
+NmissBlackWeapons=NmissBlackWeapons,
+BlackWeapons=BlackWeapons,
+MaxBlackWeapons=MaxBlackWeapons,
+MinBlackWeapons=MinBlackWeapons,
 
-   BlackRatio=BlackRatio,
-   Pop=Pop,
+BlackRatio=BlackRatio,
+Pop=Pop,
 
-   Wealth=Wealth,
-   Gini=Gini,
+Wealth=Wealth,
+Gini=Gini,
 
-   Ones=Ones,
+Ones=Ones,
 
-   DMAIndex=DMAIndex,
-   GoogleRacism=GoogleRacism,
-   DMA=DMA
-  )
+DMAIndex=DMAIndex,
+GoogleRacism=GoogleRacism,
+DMA=DMA
+ )
 
 
 ##############################################################################################################STAN MODEL Code
