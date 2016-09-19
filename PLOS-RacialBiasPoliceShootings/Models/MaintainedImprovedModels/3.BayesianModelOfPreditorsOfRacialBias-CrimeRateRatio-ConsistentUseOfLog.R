@@ -70,32 +70,33 @@ MaxBlackWeapons <- max(BlackWeapons,na.rm=T)
 MinBlackWeapons <- min(BlackWeapons,na.rm=T)
 
 ##################### Now we code where the missing data occur, and deal with a few cases of zeros.
-# There are two ways to account for zeros, either add a small constant later, or treat zeros as missing data.
+# There are two ways to account for zeros, either take out logs later, or treat zeros as missing data.
 # Here we code the small number of zeros as missing data parameters. It is as if the rates are zero due lack of 
-# reporting, not becuase of complete absence of crime. 
+# reporting, not becuase of complete absence of crime. Check robustness by running the very last regression model below,
+# and commenting out the 4 lines with ifelse(XX==0,NA,XX) below.
 
-WhiteAssault <- ifelse(WhiteAssault==0,NA,WhiteAssault)
+ WhiteAssault <- ifelse(WhiteAssault==0,NA,WhiteAssault)
 MissCumSumWhiteAssault <-cumsum(is.na(WhiteAssault))
 MissCumSumWhiteAssault <-ifelse(MissCumSumWhiteAssault ==0,1,MissCumSumWhiteAssault )
 NonMissWhiteAssault  <-ifelse(is.na(WhiteAssault ),0,1)
 NmissWhiteAssault <-sum(is.na(WhiteAssault ))
 WhiteAssault [is.na(WhiteAssault )]<-9999999
 
-BlackAssault <- ifelse(BlackAssault==0,NA,BlackAssault)
+ BlackAssault <- ifelse(BlackAssault==0,NA,BlackAssault)
 MissCumSumBlackAssault <-cumsum(is.na(BlackAssault))
 MissCumSumBlackAssault <-ifelse(MissCumSumBlackAssault ==0,1,MissCumSumBlackAssault )
 NonMissBlackAssault  <-ifelse(is.na(BlackAssault ),0,1)
 NmissBlackAssault <-sum(is.na(BlackAssault ))
 BlackAssault [is.na(BlackAssault )]<-9999999
 
-WhiteWeapons <- ifelse(WhiteWeapons==0,NA,WhiteWeapons)
+ WhiteWeapons <- ifelse(WhiteWeapons==0,NA,WhiteWeapons)
 MissCumSumWhiteWeapons <-cumsum(is.na(WhiteWeapons))
 MissCumSumWhiteWeapons <-ifelse(MissCumSumWhiteWeapons ==0,1,MissCumSumWhiteWeapons )
 NonMissWhiteWeapons  <-ifelse(is.na(WhiteWeapons ),0,1)
 NmissWhiteWeapons <-sum(is.na(WhiteWeapons ))
 WhiteWeapons [is.na(WhiteWeapons )]<-9999999
 
-BlackWeapons <- ifelse(BlackWeapons==0,NA,BlackWeapons)
+ BlackWeapons <- ifelse(BlackWeapons==0,NA,BlackWeapons)
 MissCumSumBlackWeapons <-cumsum(is.na(BlackWeapons))
 MissCumSumBlackWeapons <-ifelse(MissCumSumBlackWeapons ==0,1,MissCumSumBlackWeapons )
 NonMissBlackWeapons  <-ifelse(is.na(BlackWeapons ),0,1)
@@ -281,10 +282,10 @@ Sigma ~ exponential(1); # SD
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(MeanAssault) + Theta[7]*log(RatioAssault)   );
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(MeanWeapons) + Theta[7]*log(RatioWeapons)   );
 
-#Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(MeanWeapons) + Theta[8]*log(RatioWeapons)  + Theta[9]*log(MeanAssault) + Theta[10]*log(RatioAssault)  );
+ Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(MeanWeapons) + Theta[8]*log(RatioWeapons)  + Theta[9]*log(MeanAssault) + Theta[10]*log(RatioAssault)  );
 
 # And, just to check, remove the logs on the RHS for everything except population
-Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*(BlackRatio) + Theta[4]*(Gini) + Theta[5]*(Wealth) + Theta[6]*(DataHate)  + Theta[7]*(MeanWeapons) + Theta[8]*(RatioWeapons)  + Theta[9]*(MeanAssault) + Theta[10]*(RatioAssault)  );
+# Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*(BlackRatio) + Theta[4]*(Gini) + Theta[5]*(Wealth) + Theta[6]*(DataHate)  + Theta[7]*(MeanWeapons) + Theta[8]*(RatioWeapons)  + Theta[9]*(MeanAssault) + Theta[10]*(RatioAssault)  );
 
 log_Y ~  normal(Mu,Sigma); # Model outcomes
 }
