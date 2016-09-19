@@ -298,7 +298,7 @@ log_Y ~  normal(Mu,Sigma); # Model outcomes
 ################################################################################ Fit the Model IN STAN!
 iter<-20000
 warmup<-2000
-fitKilling <- stan(model_code=model_code, data = model_dat, thin=1, iter = iter, warmup=warmup,chains = 2,refresh=10,pars=c("Theta","Sigma"))
+fitKilling <- stan(model_code=model_code, data = model_dat, thin=1, iter = iter, warmup=warmup,chains = 1,refresh=10, pars=c("Theta","Sigma"))
 
 print(fitKilling,digits_summary=4,pars=c("Theta","Sigma"))
 
