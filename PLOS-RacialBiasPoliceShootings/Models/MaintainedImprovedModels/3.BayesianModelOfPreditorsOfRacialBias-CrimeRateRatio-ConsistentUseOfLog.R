@@ -96,6 +96,9 @@ NonMissWhiteWeapons  <-ifelse(is.na(WhiteWeapons ),0,1)
 NmissWhiteWeapons <-sum(is.na(WhiteWeapons ))
 WhiteWeapons [is.na(WhiteWeapons )]<-9999999
 
+# If not coding zeros as missing data, then run the line below to set the single case of a zero denominator to the distribution min
+# WhiteWeapons[104] <- min(WhiteWeapons[which(WhiteWeapons>0)])
+
  BlackWeapons <- ifelse(BlackWeapons==0,NA,BlackWeapons)
 MissCumSumBlackWeapons <-cumsum(is.na(BlackWeapons))
 MissCumSumBlackWeapons <-ifelse(MissCumSumBlackWeapons ==0,1,MissCumSumBlackWeapons )
@@ -293,9 +296,9 @@ log_Y ~  normal(Mu,Sigma); # Model outcomes
 
 
 ################################################################################ Fit the Model IN STAN!
-iter<-4000
+iter<-20000
 warmup<-2000
-fitKilling <- stan(model_code=model_code, data = model_dat, thin=1, iter = iter, warmup=warmup,chains = 1,refresh=10,pars=c("Theta","Sigma"))
+fitKilling <- stan(model_code=model_code, data = model_dat, thin=1, iter = iter, warmup=warmup,chains = 2,refresh=10,pars=c("Theta","Sigma"))
 
 print(fitKilling,digits_summary=4,pars=c("Theta","Sigma"))
 
