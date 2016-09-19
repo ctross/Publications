@@ -281,7 +281,10 @@ Sigma ~ exponential(1); # SD
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(MeanAssault) + Theta[7]*log(RatioAssault)   );
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(MeanWeapons) + Theta[7]*log(RatioWeapons)   );
 
-Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(MeanWeapons) + Theta[8]*log(RatioWeapons)  + Theta[9]*log(MeanAssault) + Theta[10]*log(RatioAssault)  );
+#Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(MeanWeapons) + Theta[8]*log(RatioWeapons)  + Theta[9]*log(MeanAssault) + Theta[10]*log(RatioAssault)  );
+
+# And, just to check, remove the logs on the RHS for everything except population
+Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*(BlackRatio) + Theta[4]*(Gini) + Theta[5]*(Wealth) + Theta[6]*(DataHate)  + Theta[7]*(MeanWeapons) + Theta[8]*(RatioWeapons)  + Theta[9]*(MeanAssault) + Theta[10]*(RatioAssault)  );
 
 log_Y ~  normal(Mu,Sigma); # Model outcomes
 }
