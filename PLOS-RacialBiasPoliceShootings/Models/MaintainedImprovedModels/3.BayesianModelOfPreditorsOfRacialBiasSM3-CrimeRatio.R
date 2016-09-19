@@ -1,4 +1,10 @@
+################################# Load Data ####################################################################################
+library(rstan)
+library(rethinking)
 
+ g<-read.csv(file.choose())    # MapFileData-WithCountyResultsAndCovariates.csv
+ goog<-read.csv(file.choose()) # RacismData_Google-Stephens-Davidowitz.csv
+ 
 ############################################################### Extract Data
      Ym<- g$m.log.RR_Black_Unarmed_Versus_White_Unarmed     # First Outcome
      Ysd<- g$sd.log.RR_Black_Unarmed_Versus_White_Unarmed   #
