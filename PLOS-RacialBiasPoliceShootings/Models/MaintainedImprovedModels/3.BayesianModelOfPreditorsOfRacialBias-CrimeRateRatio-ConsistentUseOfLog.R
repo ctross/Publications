@@ -2,12 +2,12 @@
 library(rstan)
 library(rethinking)
 
-g<-read.csv(file.choose())    # MapFileData-WithCountyResultsAndCovariates.csv
-goog<-read.csv(file.choose()) # RacismData_Google-Stephens-Davidowitz.csv
+g <- read.csv(file.choose())    # MapFileData-WithCountyResultsAndCovariates.csv
+goog <- read.csv(file.choose()) # RacismData_Google-Stephens-Davidowitz.csv
  
 ############################################################### Extract Data
-Ym<- g$m.log.RR_Black_Unarmed_Versus_White_Unarmed     # First Outcome
-Ysd<- g$sd.log.RR_Black_Unarmed_Versus_White_Unarmed   #
+Ym <- g$m.log.RR_Black_Unarmed_Versus_White_Unarmed     # First Outcome
+Ysd <- g$sd.log.RR_Black_Unarmed_Versus_White_Unarmed   #
 
 ############################################################### Define race-specific crime rates
 WhiteAssault <- (g$AssaultsWhite.sum/g$WA_TOT)
@@ -19,55 +19,55 @@ BlackWeapons <- (g$WeaponsBlack.sum/g$BAC_TOT)
 ############################################################## Extract other data
 Wealth <- (g$Median.Income)
 
-Pop<-g$TOT_POP
+Pop <- g$TOT_POP
 
-BlackRatio<-(g$BAC_TOT+1)/Pop
+BlackRatio <- (g$BAC_TOT+1)/Pop # Add 1 person to population to scale off of zero
 
-Gini<-g$Gini
+Gini <- g$Gini
 
-State<-g$State
+State <- g$State
 
-DMA<-g$DMA
+DMA <- g$DMA
 
 ################################################################### Compile Data
 #### then reduce to only data with estimates of racial bias in police shooting
-g2<- data.frame(g$County.FIPS.Code,Ym,Ysd, Gini, Wealth,Pop,State,BlackRatio,Gini,DMA,WhiteAssault,BlackAssault,WhiteWeapons,BlackWeapons)
+g2 <- data.frame(g$County.FIPS.Code,Ym,Ysd, Gini, Wealth,Pop,State,BlackRatio,Gini,DMA,WhiteAssault,BlackAssault,WhiteWeapons,BlackWeapons)
 g3 <- g2[complete.cases(g2$Ym),]
 
 Ym  <- g3$Ym
 Ysd <- g3$Ysd
 
-N<-length(Ym)
+N <- length(Ym)
 
 DMA <- g3$DMA
 
-Pop <-g3$Pop/sd(g3$Pop,na.rm=T)
-BlackRatio<-g3$BlackRatio
+Pop <- g3$Pop/sd(g3$Pop,na.rm=T)
+BlackRatio <- g3$BlackRatio
 
-Wealth <-g3$Wealth/sd(g3$Wealth,na.rm=T)
-Gini<-g3$Gini
+Wealth <- g3$Wealth/sd(g3$Wealth,na.rm=T)
+Gini <- g3$Gini
 
-Ones<-rep(1,N)
+Ones <- rep(1,N)
 
-DMAIndex<-goog$dmaindex
-GoogleRacism<-goog$raciallychargedsearch
+DMAIndex <- goog$dmaindex
+GoogleRacism <- goog$raciallychargedsearch
 
 ########### There is missing data here, so we need to find the max and min of emprical data
-WhiteAssault <-g3$WhiteAssault
-MaxWhiteAssault<-max(WhiteAssault,na.rm=T)
-MinWhiteAssault<-min(WhiteAssault,na.rm=T)
+WhiteAssault <- g3$WhiteAssault
+MaxWhiteAssault <- max(WhiteAssault,na.rm=T)
+MinWhiteAssault <- min(WhiteAssault,na.rm=T)
 
-BlackAssault <-g3$BlackAssault
-MaxBlackAssault<-max(BlackAssault,na.rm=T)
-MinBlackAssault<-min(BlackAssault,na.rm=T)
+BlackAssault <- g3$BlackAssault
+MaxBlackAssault <- max(BlackAssault,na.rm=T)
+MinBlackAssault <- min(BlackAssault,na.rm=T)
 
-WhiteWeapons <-g3$WhiteWeapons
-MaxWhiteWeapons<-max(WhiteWeapons,na.rm=T)
-MinWhiteWeapons<-min(WhiteWeapons,na.rm=T)
+WhiteWeapons <- g3$WhiteWeapons
+MaxWhiteWeapons <- max(WhiteWeapons,na.rm=T)
+MinWhiteWeapons <- min(WhiteWeapons,na.rm=T)
 
-BlackWeapons <-g3$BlackWeapons
-MaxBlackWeapons<-max(BlackWeapons,na.rm=T)
-MinBlackWeapons<-min(BlackWeapons,na.rm=T)
+BlackWeapons <- g3$BlackWeapons
+MaxBlackWeapons <- max(BlackWeapons,na.rm=T)
+MinBlackWeapons <- min(BlackWeapons,na.rm=T)
 
 ##################### Now we code where the missing data occur, and deal with a few cases of zeros.
 # There are two ways to account for zeros, either add a small constant later, or treat zeros as missing data.
@@ -102,7 +102,8 @@ NonMissBlackWeapons  <-ifelse(is.na(BlackWeapons ),0,1)
 NmissBlackWeapons <-sum(is.na(BlackWeapons ))
 BlackWeapons [is.na(BlackWeapons )]<-9999999
 
-model_dat  <-list(N=N,
+model_dat  <-list(
+N=N,
 Ym=Ym,
 Ysd=Ysd,
 
@@ -146,7 +147,6 @@ DMAIndex=DMAIndex,
 GoogleRacism=GoogleRacism,
 DMA=DMA
  )
-
 
 ##############################################################################################################STAN MODEL Code
 model_code<-"
@@ -206,7 +206,7 @@ parameters {
  
  real<lower=25,upper=155> iHate; # Use parameter to impute one missing data point for the Hate data
  
- ############################## Parameters for missing data points in the crime rate data
+ ############################## Use parameters for missing data points or zeros in the crime rate data
  real<lower=MinWhiteAssault,upper=MaxWhiteAssault> iWhiteAssault[NmissWhiteAssault];
  real<lower=MinBlackAssault,upper=MaxBlackAssault> iBlackAssault[NmissBlackAssault];
  real<lower=MinWhiteWeapons,upper=MaxWhiteWeapons> iWhiteWeapons[NmissWhiteWeapons];
@@ -223,12 +223,14 @@ transformed parameters{
  
  vector<lower=0>[N] DataHate;
 
+########################### Insert missing data parameter into vector on hate
 for(t in 1:N){
  DataHate[t] =   if_else(DMA[t]==156,iHate,GoogleRacism[DMA[t]] );
  }
 
 ########################### Here we both merge data and parameters for missing data, and define the population-weighted mean
-# crime rates, and the crime rate ratio
+# crime rate and the crime rate ratio for each county. The if_else function inserts either the data, or the missing data parameter,
+# and in the MeanAssault or MeanWeapons lines, the BlackRatio variable is used to create a weighted crime rate average.
 
 for(t in 1:N){
  MeanAssault[t] = ((1-BlackRatio[t])*if_else(NonMissWhiteAssault[t], WhiteAssault[t], iWhiteAssault[MissCumSumWhiteAssault[t]]))+(BlackRatio[t]*if_else(NonMissBlackAssault[t], BlackAssault[t], iBlackAssault[MissCumSumBlackAssault[t]]));
