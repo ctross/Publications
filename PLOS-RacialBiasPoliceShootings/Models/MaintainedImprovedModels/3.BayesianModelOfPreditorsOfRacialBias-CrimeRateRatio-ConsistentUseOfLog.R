@@ -255,7 +255,7 @@ Sigma ~ exponential(1); # SD
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(Wealth) );
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(Gini)   );
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(DataHate)   );
- Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(MeanAssault) + Theta[4]*log(RatioAssault)  );
+#Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(MeanAssault) + Theta[4]*log(RatioAssault)  );
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(MeanWeapons) + Theta[4]*log(RatioWeapons)   );
 
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) );
@@ -279,7 +279,7 @@ Sigma ~ exponential(1); # SD
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(MeanAssault) + Theta[7]*log(RatioAssault)   );
 #Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(MeanWeapons) + Theta[7]*log(RatioWeapons)   );
 
-#Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(MeanWeapons) + Theta[8]*log(RatioWeapons)  + Theta[9]*log(MeanAssault) + Theta[10]*log(RatioAssault)  );
+Mu = ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(MeanWeapons) + Theta[8]*log(RatioWeapons)  + Theta[9]*log(MeanAssault) + Theta[10]*log(RatioAssault)  );
 
 log_Y ~  normal(Mu,Sigma); # Model outcomes
 }
