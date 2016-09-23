@@ -239,31 +239,31 @@ Sigma ~ exponential(1);
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(Wealth) );
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(Gini)   );
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(DataHate)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(DataWhiteAssault) + Theta[4]*(DataBlackAssault)  );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(DataWhiteWeapons) + Theta[4]*(DataBlackWeapons)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(DataWhiteAssault) + Theta[4]*log(DataBlackAssault)  );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(DataWhiteWeapons) + Theta[4]*log(DataBlackWeapons)   );
 
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) );
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini)   );
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(DataHate)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(DataWhiteAssault) + Theta[5]*(DataBlackAssault)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(DataWhiteWeapons) + Theta[5]*(DataBlackWeapons)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(DataWhiteAssault) + Theta[5]*log(DataBlackAssault)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(DataWhiteWeapons) + Theta[5]*log(DataBlackWeapons)   );
 
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(Gini)   );
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataHate)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataWhiteAssault) + Theta[6]*(DataBlackAssault)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataWhiteWeapons) + Theta[6]*(DataBlackWeapons)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataWhiteAssault) + Theta[6]*log(DataBlackAssault)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataWhiteWeapons) + Theta[6]*log(DataBlackWeapons)   );
 
 #Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataWhiteAssault) + Theta[6]*(DataBlackAssault)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataWhiteWeapons) + Theta[6]*(DataBlackWeapons)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataWhiteAssault) + Theta[6]*log(DataBlackAssault)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataWhiteWeapons) + Theta[6]*log(DataBlackWeapons)   );
 
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteAssault) + Theta[7]*(DataBlackAssault)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteWeapons) + Theta[7]*(DataBlackWeapons)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteAssault) + Theta[7]*log(DataBlackAssault)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Wealth) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteWeapons) + Theta[7]*log(DataBlackWeapons)   );
 
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteAssault) + Theta[7]*(DataBlackAssault)   );
-#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteWeapons) + Theta[7]*(DataBlackWeapons)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteAssault) + Theta[7]*log(DataBlackAssault)   );
+#Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(DataHate)  + Theta[6]*log(DataWhiteWeapons) + Theta[7]*log(DataBlackWeapons)   );
 
-Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(DataWhiteWeapons) + Theta[8]*(DataBlackWeapons)  + Theta[9]*log(DataWhiteAssault) + Theta[10]*(DataBlackAssault)  );
+Mu <- ( Theta[1] + Theta[2]*log(Pop) + Theta[3]*log(BlackRatio) + Theta[4]*log(Gini) + Theta[5]*log(Wealth) + Theta[6]*log(DataHate)  + Theta[7]*log(DataWhiteWeapons) + Theta[8]*log(DataBlackWeapons)  + Theta[9]*log(DataWhiteAssault) + Theta[10]*log(DataBlackAssault)  );
 
 log_Y ~  normal(Mu,Sigma);
 }
