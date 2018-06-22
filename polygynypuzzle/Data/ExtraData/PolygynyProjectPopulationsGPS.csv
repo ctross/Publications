@@ -1,0 +1,30 @@
+Population ,Location,Latitude,Longitude,Label,Hoffset,Voffset,Subsistence
+Kipsigis,Kenya,-0.755461804,34.79921035,Kipsigis,1.1,0,Agropastoral
+"Sangu, Sukuma, Nayakyusa",Tanzania,-9.137522394,33.95326508,Sangu,1.1,0.5,Agropastoral
+Maasai,Tanzania,-9.324582158,38.54290365,Maasai [1],-0.1,0.6,Agropastoral
+Maasai (Group 2),Tanzania,-11.04084714,38.07073569,Maasai [2],-0.1,1.2,Agropastoral
+Koore,Ethiopia,6.200456879,36.80976639,Koore,1.1,0,Agropastoral
+Chagga,Tanzania,-3.190052527,36.87297978,Chagga,-0.1,0,Horticultural
+Sidama,Ethiopia,4.275029018,39.05097733,Sidama,-0.1,0,Agropastoral
+Sukuma,Tanzania,-11.33480935,35.04925331,Sukuma,0.9,1,Agropastoral
+Pimbwe,Tanzania,-7.738380294,32.54707108,Pimbwe,1.1,-0.1,Horticultural
+Maya,Belize,16.35950754,-89.02491937,Maya [2],-0.1,0,Horticultural
+Tsimane,Bolivia,-12.8753455,-65.82722353,Tsimane [1],-0.1,-0.3,Horticultural
+Dolgan and Nganasan,Siberia,71.1172485,92.7559908,Dolgan/Niaa,-0.1,0,Forager
+Polish,Poland,50.677564,20.351805,Polish,-0.1,0,Agricultural
+Maya,Mexico,20.36506475,-88.90131718,Maya [1],1.1,0,Horticultural
+Matsigenka,Peru,-12.14691556,-71.71868999,Matsigenka,1.1,0,Horticultural
+Bangladeshi,Bangladesh,23.500772,90.661708,Bangladeshi,-0.1,0,Agricultural
+Tsimane,Bolivia,-14.07547751,-65.23396381,Tsimane [2],-0.1,0.6,Horticultural
+Makushi,Guyana,3.998347201,-59.13113054,Makushi,-0.1,0.2,Horticultural
+Lamalera,Indonesia,-8.458960747,123.0853392,Lamalera,-0.1,0,Forager
+Himba,Namibia,-19.17127687,14.48555164,Himba,1.1,0,Agropastoral
+Mayangna and Miskito,Nicaragua,12.82502267,-84.34474559,Mayangna,1.1,0.2,Horticultural
+English,England,52.038486,-1.747146,English,-0.1,0,Agricultural
+Ache,Paraguay,-21.780959,-59.339955,Ache,-0.1,0,Forager
+Agta,Philipines,16.19077045,122.1157877,Agta,-0.2,0,Forager
+Aka,Central African Republic,4.275029018,16.30928611,Aka,1.2,0,Forager
+Hadza,Tanzania,-4.723321807,36.02419593,Hadza,-0.2,0.7,Forager
+!Kung,Botswana,-24.87164385,21.49483499,!Kung,-0.1,0,Forager
+Pume,Venezuela,8.184133296,-71.53740958,Pume,-0.2,0.2,Forager
+Krummhorn,Germany,53.467624,7.122318,Krummhorn,-0.1,0,Agricultural

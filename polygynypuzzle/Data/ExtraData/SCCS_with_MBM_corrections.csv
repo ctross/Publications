@@ -1,0 +1,187 @@
+sccs#,socname,Subsistence_Type_v858,Cultural_Basis_of_Polygyny_v860,Standard_Polygamy_code_v861,Percent_md_men_more_1_wife_v871,Percent_md_women_polyg_md_v872,Rev_Standard_Polygamy_code_v861,subsistence_type_categorized
+1,Nama Hottentot,6,3,3,5,12,3,Pastoralists v858 6
+2,Kung Bushmen,1,3,3,10,19,3,Foragers v858 1-3
+3,Thonga,8,5,4,40,66,4,NA
+4,Lozi,11,5,4,40,NA,4,NA
+5,Mbundu,8,5,4,27,45,4,NA
+6,Suku,8,5,4,27,41,4,NA
+7,Bemba,8,3,3,2,7,3,NA
+8,Nyakyusa,11,5,4,44,70,4,NA
+9,Hadza,1,2,2,6,12,2,Foragers v858 1-3
+10,Luguru,8,3,3,NA,NA,3,NA
+11,Kikuyu,6,5,4,NA,32,4,Pastoralists v858 6
+12,Ganda,9,5,4,55,80,4,NA
+13,Mbuti,1,3,3,6,12,3,Foragers v858 1-3
+14,Nkundo Mongo,8,5,4,NA,NA,4,NA
+15,Banen,8,5,4,NA,NA,4,NA
+16,Tiv,8,5,4,20,52,4,NA
+17,Ibo,8,5,4,24,46,4,NA
+18,Fon,8,5,4,NA,NA,4,NA
+19,Ashanti,8,5,4,49,72,4,NA
+20,Mende,8,5,4,90,97,4,NA
+21,Wolof,8,5,4,39,61,4,NA
+22,Bambara,11,5,4,NA,NA,4,NA
+23,Tallensi,11,5,4,40,62,4,NA
+24,Songhai,11,2,3,1,2,3,NA
+25,Pastoral Fulani,6,5,4,35,54,4,Pastoralists v858 6
+26,Hausa,11,5,4,40,59,4,NA
+27,Massa (Masa),11,5,4,NA,NA,4,NA
+28,Azande,8,5,4,32,57,4,NA
+29,Fur (Darfur),11,3,3,NA,NA,3,NA
+30,Otoro Nuba,11,5,4,60,77,4,NA
+31,Shilluk,8,5,4,23,37,4,NA
+32,Mao,7,4,NA,5,10,NA,Horticulturalists v858 7
+33,Kaffa (Kafa),12,5,4,NA,NA,4,Intensive agriculturalists v858 12
+34,Masai,6,5,4,41,61,4,Pastoralists v858 6
+35,Konso,12,3,3,10,24,3,Intensive agriculturalists v858 12
+36,Somali,6,5,4,43,65,4,Pastoralists v858 6
+37,Amhara,12,1,1,0,0,1,Intensive agriculturalists v858 12
+38,Bogo,6,3,2,NA,NA,2,Pastoralists v858 6
+39,Kenuzi Nubians,11,3,3,NA,NA,3,NA
+40,Teda,6,4,3,10,22,3,Pastoralists v858 6
+41,Tuareg,6,1,1,0,0,1,Pastoralists v858 6
+42,Riffians,12,4,3,11,25,3,Intensive agriculturalists v858 12
+43,Egyptians,12,2,2,3,7,2,Intensive agriculturalists v858 12
+44,Hebrews,12,NA,NA,NA,NA,NA,Intensive agriculturalists v858 12
+45,Babylonians,12,2,2,NA,NA,2,Intensive agriculturalists v858 12
+46,Rwala Bedouin,6,5,4,NA,NA,4,Pastoralists v858 6
+47,Turks,12,2,2,3,6,2,Intensive agriculturalists v858 12
+48,Gheg Albanians,12,5,4,24,41,4,Intensive agriculturalists v858 12
+49,Romans,12,1,1,0,0,1,Intensive agriculturalists v858 12
+50,Basques,12,1,1,0,0,1,Intensive agriculturalists v858 12
+51,Irish,12,1,1,0,0,1,Intensive agriculturalists v858 12
+52,Lapps,6,1,1,0,0,1,Pastoralists v858 6
+53,Yurak Samoyed,6,2,2,0,0,2,Pastoralists v858 6
+54,Russians,12,1,1,0,0,1,Intensive agriculturalists v858 12
+55,Abkhaz,6,3,3,NA,NA,3,Pastoralists v858 6
+56,Armenians,11,1,1,0,0,1,NA
+57,Kurd,12,3,3,4,7,3,Intensive agriculturalists v858 12
+58,Basseri,6,3,NA,NA,NA,3,Pastoralists v858 6
+59,Punjabi (West),12,1,1,0,0,1,Intensive agriculturalists v858 12
+60,Gond,8,NA,4,NA,NA,4,NA
+61,Toda,6,2,0,1,1,2,Pastoralists v858 6
+62,Santal,12,2,2,2,4,2,Intensive agriculturalists v858 12
+63,Uttar Pradesh,12,2,3,NA,NA,3,Intensive agriculturalists v858 12
+64,Burusho,12,2,NA,NA,NA,NA,Intensive agriculturalists v858 12
+65,Kazak,6,4,3,10,18,3,Pastoralists v858 6
+66,Khalka Mongols,6,1,1,0,0,1,Pastoralists v858 6
+67,Lolo,12,4,2,3,5,2,Intensive agriculturalists v858 12
+68,Lepcha,12,2,2,21,35,2,Intensive agriculturalists v858 12
+69,Garo,7,4,2,9,17,2,Horticulturalists v858 7
+70,Lakher,7,2,2,NA,NA,2,Horticulturalists v858 7
+71,Burmese,12,1,1,0,0,1,Intensive agriculturalists v858 12
+72,Lamet,7,NA,NA,NA,NA,NA,Horticulturalists v858 7
+73,Vietnamese,12,3,3,NA,NA,3,Intensive agriculturalists v858 12
+74,Rhade,8,2,NA,NA,NA,NA,NA
+75,Khmer,12,2,2,NA,NA,2,Intensive agriculturalists v858 12
+76,Siamese,12,2,3,1,2,3,Intensive agriculturalists v858 12
+77,Semang,1,2,2,1,2,2,Foragers v858 1-3
+78,Nicobarese,9,2,NA,0,0,NA,NA
+79,Andamanese,3,1,1,0,0,1,Foragers v858 1-3
+80,Vedda,2,1,1,0,0,1,Foragers v858 1-3
+81,Tanala,11,5,4,31,52,4,NA
+82,Negri Sembilan,12,3,NA,NA,NA,NA,Intensive agriculturalists v858 12
+83,Javanese,12,3,3,2,4,3,Intensive agriculturalists v858 12
+84,Balinese,12,4,3,18,35,3,Intensive agriculturalists v858 12
+85,Iban,7,1,1,0,0,1,Horticulturalists v858 7
+86,Badjau,3,1,1,0,0,1,Foragers v858 1-3
+87,Toradja,7,NA,NA,NA,NA,NA,Horticulturalists v858 7
+88,Tobelorese,7,1,1,0,0,1,Horticulturalists v858 7
+89,Alorese,7,4,4,27,44,4,Horticulturalists v858 7
+90,Tiwi,1,5,4,70,90,4,Foragers v858 1-3
+91,Aranda,1,5,4,60,78,4,Foragers v858 1-3
+92,Orokaiva,9,4,3,5,10,3,NA
+93,Kimam,11,2,3,15,30,3,NA
+94,Kapauku,7,5,4,31,50,4,Horticulturalists v858 7
+95,Kwoma,9,5,4,38,59,4,NA
+96,Manus,3,2,2,2,4,2,Foragers v858 1-3
+97,New Ireland,9,4,3,12,21,3,NA
+98,Trobrianders,9,3,3,3,39,3,NA
+99,Siuai,9,3,3,14,28,3,NA
+100,Tikopia,9,4,3,5,7,3,NA
+101,Pentecost,9,4,3,12,30,3,NA
+102,Mbau Fijians,9,3,3,1,3,3,NA
+103,Ajie,11,NA,NA,NA,NA,NA,NA
+104,Maori,7,3,4,1,5,4,Horticulturalists v858 7
+105,Marquesans,9,2,0,0,0,0,NA
+106,Western Samoans,9,3,3,0,0,3,NA
+107,Gilbertese,9,3,2,1,2,2,NA
+108,Marshallese,9,3,NA,NA,NA,NA,NA
+109,Trukese,9,2,2,0,0,2,NA
+110,Yapese,9,3,NA,5,10,NA,NA
+111,Palauans,9,4,2,1,2,2,NA
+112,Ifugao,11,2,2,2,4,2,NA
+113,Atayal,7,1,1,0,0,1,Horticulturalists v858 7
+114,Chinese,12,1,1,0,0,1,Intensive agriculturalists v858 12
+115,Manchu,12,1,1,0,0,1,Intensive agriculturalists v858 12
+116,Koreans,12,2,1,1,2,1,Intensive agriculturalists v858 12
+117,Japanese,12,1,1,0,0,1,Intensive agriculturalists v858 12
+118,Ainu,3,3,2,1,2,2,Foragers v858 1-3
+119,Gilyak,3,3,3,1,3,3,Foragers v858 1-3
+120,Yukaghir,3,2,2,1,2,2,Foragers v858 1-3
+121,Chukchee,6,4,3,33,49,3,Pastoralists v858 6
+122,Ingalik,4,3,3,4,8,3,NA
+123,Aleut,4,3,3,NA,NA,3,NA
+124,Copper Eskimo,2,2,2,5,10,2,Foragers v858 1-3
+125,Montagnais,2,2,2,NA,NA,2,Foragers v858 1-3
+126,Micmac,2,NA,NA,NA,NA,NA,Foragers v858 1-3
+127,Saulteaux,3,3,2,2,4,2,Foragers v858 1-3
+128,Slave,2,3,2,2,4,2,Foragers v858 1-3
+129,Kaska,3,3,3,2,4,3,Foragers v858 1-3
+130,Eyak,4,3,4,NA,NA,4,NA
+131,Haida,4,4,3,NA,NA,3,NA
+132,Bellacoola,4,4,NA,5,10,NA,NA
+133,Twana,4,4,3,25,NA,3,NA
+134,Yurok,4,2,2,4,8,2,NA
+135,Pomo (Eastern),1,2,2,2,4,2,Foragers v858 1-3
+136,Yokuts (Lake),3,2,3,5,10,3,Foragers v858 1-3
+137,Paiute (North.),1,3,3,15,27,3,Foragers v858 1-3
+138,Klamath,4,4,3,20,35,3,NA
+139,Kutenai,3,2,2,10,19,2,Foragers v858 1-3
+140,Gros Ventre,5,5,4,40,60,4,NA
+141,Hidatsa,11,5,4,90,97,4,NA
+142,Pawnee,7,5,4,54,70,4,Horticulturalists v858 7
+143,Omaha,7,4,4,35,55,4,Horticulturalists v858 7
+144,Huron,7,1,1,0,0,1,Horticulturalists v858 7
+145,Creek,7,4,3,NA,NA,3,Horticulturalists v858 7
+146,Natchez,7,4,4,NA,NA,4,Horticulturalists v858 7
+147,Comanche,5,5,4,NA,NA,4,NA
+148,Chiricahua,5,4,4,18,30,4,NA
+149,Zuni,11,1,1,0,0,1,NA
+150,Havasupai,11,3,3,10,19,3,NA
+151,Papago,11,4,4,27,49,4,NA
+152,Huichol,7,3,2,NA,NA,2,Horticulturalists v858 7
+153,Aztec,11,3,3,NA,NA,3,NA
+154,Popoluca,8,4,4,NA,NA,4,NA
+155,Quiche,8,1,1,NA,NA,1,NA
+156,Miskito,7,3,3,2,4,3,Horticulturalists v858 7
+157,Bribri,7,3,3,5,10,3,Horticulturalists v858 7
+158,Cuna (Tule),7,2,2,1,2,2,Horticulturalists v858 7
+159,Goajiro,6,5,4,40,90,4,Pastoralists v858 6
+160,Haitians,11,5,4,25,NA,4,NA
+161,Callinago,11,4,4,30,60,4,NA
+162,Warrau,3,5,4,60,95,4,Foragers v858 1-3
+163,Yanomamo,7,5,4,38,56,4,Horticulturalists v858 7
+164,Carib (Barama),7,3,2,20,37,2,Horticulturalists v858 7
+165,Saramacca,7,5,4,60,85,4,Horticulturalists v858 7
+166,Mundurucu,7,3,3,7,15,3,Horticulturalists v858 7
+167,Cubeo (Tucano),7,3,2,3,6,2,Horticulturalists v858 7
+168,Cayapa,9,1,1,0,0,1,NA
+169,Jivaro,7,5,4,50,90,4,Horticulturalists v858 7
+170,Amahuaca,7,5,4,50,70,4,Horticulturalists v858 7
+171,Inca,11,4,3,10,27,3,NA
+172,Aymara,7,1,1,0,0,1,Horticulturalists v858 7
+173,Siriono,2,3,4,11,38,4,Foragers v858 1-3
+174,Nambicuara,7,4,3,31,55,3,Horticulturalists v858 7
+175,Trumai,7,3,3,12,22,3,Horticulturalists v858 7
+176,Timbira,7,2,2,0,0,2,Horticulturalists v858 7
+177,Tupinamba,7,4,4,30,50,4,Horticulturalists v858 7
+178,Botocudo,2,3,4,33,55,4,Foragers v858 1-3
+179,Shavante,1,5,4,24,49,4,Foragers v858 1-3
+180,Aweikoma,2,3,4,30,50,4,Foragers v858 1-3
+181,Cayua,7,2,2,NA,NA,2,Horticulturalists v858 7
+182,Lengua,2,3,3,3,6,3,Foragers v858 1-3
+183,Abipon,5,4,3,5,10,3,NA
+184,Mapuche,12,4,3,6,10,3,Intensive agriculturalists v858 12
+185,Tehuelche,5,2,3,1,2,3,NA
+186,Yahgan,3,2,2,5,10,2,Foragers v858 1-3
